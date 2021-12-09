@@ -7,23 +7,20 @@
     <title>Document</title>
 </head>
 <body>
-    
-    <form action="">
-        <input type="text" name="keyword">
-        <input type="submit" value="Submit">
-    </form>
 
     @foreach($posts as $post)
 
         <div style="padding: 20px; margin-top: 50px;">
             <p>
                 <a href="/posts/{{$post->id}}">
-                    Title: {{ $post->title }}
+                    Title: {{ $post->Title }}
                 </a>
             </p>
-            <p>Meta Description: {{ $post->meta_description }}</p>
-            <p>Body: {{ $post->body }}</p>
-            <small>{{ $post->view }}</small>
+            <p>Description: {{ $post->description }}</p>
+            <p>URL: 
+                <a href="/posts/{{$post->id}}">
+                    {{ $post->URL }}
+                </a>
         </div>
         
 

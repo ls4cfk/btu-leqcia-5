@@ -15,15 +15,22 @@ class PostSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
-    {
-        for ($i=0; $i < 50; $i++) { 
+    public function run()    
+    {   
+        $array = array(
+            array('videos' => array('title' => '2022 OSCP EXAM CHANGES - Goodbye Buffer Overflow, Hello Active Directory','url' => "https://www.youtube.com/watch?v=uvqdSGlwEkA", 'description' => 'What do YOU think about the OSCP exam changes? Drop your thoughts in the comments!')),
+            array('videos' => array('title' => 'Authorization vs. Authentication (Google Bug Bounty)','url' => "https://www.youtube.com/watch?v=hmJKUQlcGAc", 'description' => 'Authorization and Authentication can be confusing. In this video we look at their differences, and then focus on valid and invalid authorization bugs.            ')),
+            array('videos' => array('title' => 'HackTheBox - Pikaboo','url' => "https://www.youtube.com/watch?v=4tXFHoeOytE", 'description' => 'HackTheBox - Pikaboo')),
+            array('videos' => array('title' => 'HackTheBox - Oouch','url' => "https://www.youtube.com/watch?v=EUtqjK27MxQ", 'description' => 'HackTheBox - Oouch')),
+            array('videos' => array('title' => 'UHC - Jarmis','url' => "https://www.youtube.com/watch?v=R5aNxdD0_bs", 'description' => 'UHC - Jarmis'))
+    );
+
+        foreach ($array as $element) {
             $post = new Post();
             $post->fill([
-                'title' => Str::random(30),
-                'meta_description' => Str::random(100),
-                'body' => Str::random(300),
-                "view" => rand(0, 5000)
+                'title' => $element{'videos'}{'title'},
+                'url' => $element{'videos'}{'url'},
+                'description' => $element{'videos'}{'description'}
             ])->save();
         }
     }

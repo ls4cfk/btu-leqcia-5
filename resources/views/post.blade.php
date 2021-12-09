@@ -9,10 +9,9 @@
 <body>
     
     <div style="padding: 20px; margin-top: 50px;">
-        <p>Title: {{ $post->title }}</p>
-        <p>Meta Description: {{ $post->meta_description }}</p>
-        <p>Body: {{ $post->body }}</p>
-        <small>{{ $post->view }}</small>
+        <p>Title: {{ $post->Title }}</p>
+        <p>Description: {{ $post->description }}</p>
+        <p>URL: {{ $post->URL }}</p>
     </div>
 
 </body>
